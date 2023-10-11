@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,8 @@ class ProfileFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'bio' => $this->faker->paragraph(4 , true),
+            'user_id' => User::factory(),
         ];
     }
 }
